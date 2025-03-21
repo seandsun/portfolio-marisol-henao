@@ -1,0 +1,109 @@
+---
+import Section from '@/components/Section.astro';
+import Html from '@/icons/Html.astro';
+import Css from '@/icons/Css.astro';
+import JavaScript from '@/icons/JavaScript.astro';
+import TypeScript from '@/icons/TypeScript.astro';
+import React from '@/icons/React.astro';
+import Astroo from '@/icons/Astroo.astro';
+import Git from '@/icons/Git.astro';
+import Node from '@/icons/Node.astro';
+import Sql from '@/icons/Sql.astro';
+import Linux from '@/icons/Linux.astro';
+import Tailwind from '@/icons/Tailwind.astro';
+---
+
+<script>
+  /*
+  Después de que se haya cargado todo el html recupero
+  los elementos y verifico que existan
+  */
+  document.addEventListener('DOMContentLoaded', () => {
+    const logosSlide = document.querySelector('.logos-slide');
+    const logos = document.querySelector('.logos');
+    if (logosSlide && logos) {
+      let copy = logosSlide.cloneNode(true);
+      logos.appendChild(copy);
+    }
+  });
+</script>
+<Section>
+  <h2 id="habilidades">Habilidades</h2>
+
+  <div class="logos">
+    <div class="logos-slide">
+      <span><Html width="50" height="50" /></span>
+      <span><Css width="50" height="50" /></span>
+      <span><JavaScript width="50" height="50" /></span>
+      <span><TypeScript width="50" height="50" /></span>
+      <span><React width="50" height="50" /></span>
+      <span><Astroo width="50" height="50" /></span>
+      <span><Git width="50" height="50" /></span>
+      <span><Node width="50" height="50" /></span>
+      <span><Sql width="50" height="50" /></span>
+      <span><Linux width="50" height="50" /></span>
+      <span><Tailwind width="50" height="50" /></span>
+    </div>
+  </div>
+</Section>
+
+<!-- TODO: VER QUÉ ES LO QUE FALLA -->
+
+<style>
+  h2 {
+    padding-bottom: 1.5rem;
+  }
+  .logos {
+    overflow: hidden;
+    padding: 60px 0;
+    background: var(--background-color-page);
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+  }
+  .logos::before,
+  .logos::after {
+    position: absolute;
+    top: 0;
+    width: 150px;
+    height: 100%;
+    content: '';
+    z-index: 2;
+  }
+  .logos::before {
+    left: 0;
+    background: linear-gradient(
+      to left,
+      rgba(24, 24, 27, 0),
+      var(--background-color-page)
+    );
+  }
+  .logos::after {
+    right: 0;
+    background: linear-gradient(
+      to right,
+      rgba(24, 24, 27, 0),
+      var(--background-color-page)
+    );
+  }
+  .logos:hover .logos-slide {
+    animation-play-state: paused;
+  }
+  .logos-slide {
+    display: inline-block;
+    animation: slide 40s linear infinite;
+    color: white;
+  }
+  .logos-slide span {
+    margin: 0 40px;
+  }
+
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+</style>

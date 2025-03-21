@@ -1,0 +1,203 @@
+---
+import Section from '@/components/Section.astro';
+import GitHub from '@/icons/GitHub.astro';
+import LinkedIn from '@/icons/LinkedIn.astro';
+import Cv from '@/icons/cv.astro';
+import Mail from '@/icons/Mail.astro';
+---
+
+<Section>
+  <div class="container">
+    <figure>
+      <img src="../../../public/me.webp" alt="" />
+    </figure>
+
+    <div class="info">
+      <h1>Marisol Henao</h1>
+      <h2>
+        Apasionada por el <span>Desarrollo Web</span> y la <span
+          >Ciberseguridad</span
+        >
+      </h2>
+
+      <div class="ubicacion-container">
+        <div class="bandera">
+          <div class="franja yellow"></div>
+          <div class="franja blue"></div>
+          <div class="franja red"></div>
+        </div>
+        <p class="ubicacionText">Medellín - Colombia</p>
+      </div>
+
+      <div class="contacto">
+        <div class="contacto-item">
+          <a
+            href="https://www.linkedin.com/in/marisol-henao-grajales"
+            title="Visitar el perfil de Marisol en LinkedIn"
+            target="_blank"
+            rel="noopener noreferrer"><LinkedIn width="24" heigth="24" /></a
+          >
+          <a
+            href="https://github.com/seandsun"
+            title="Visitar el perfil de Marisol en GitHub"
+            target="_blank"
+            rel="noopener noreferrer"><GitHub width="24" heigth="24" /></a
+          >
+          <a
+            href="https://github.com/seandsun"
+            title="Visitar el portfolio descargable en formato pdf"
+            target="_blank"
+            rel="noopener noreferrer"><Cv width="24" heigth="24" /></a
+          >
+        </div>
+        <div class="email">
+          <a
+            href="marisolhenoa.dev@gmail.com"
+            title="Enviar un correo electrónico a Marisol al correo marisolhenao.dev@gmail"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span
+              ><Mail width="24" heigth="24" /> marisolhenao.dev@gmail.com</span
+            ></a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</Section>
+
+<style>
+  .container {
+    display: flex;
+    gap: 1rem;
+    height: 70vh;
+    align-items: center;
+    /* border: 1px solid yellow; */
+  }
+  figure {
+    width: 379px;
+    aspect-ratio: 1 / 1;
+    /* border: 1px solid green; */
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    /* border: 1px solid red; */
+  }
+  h1 {
+    font-weight: 700;
+    background: linear-gradient(
+      267deg,
+      var(--accent-color, #0ca2e3) 10%,
+      var(--secundary-color-500, #09de5c) 100%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  h2 {
+    line-height: 3rem;
+  }
+  h2 span {
+    color: var(--secundary-color-300);
+  }
+  /* bandera */
+  .ubicacion-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .ubicacion-container p {
+    width: 100%;
+    margin-right: 10px;
+  }
+  .bandera {
+    width: 40px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--primary-color-100, #fff);
+  }
+  .franja {
+    flex: 1;
+    width: 100%;
+  }
+  .yellow {
+    background-color: #ffd700;
+    flex: 2;
+  }
+  .blue {
+    background-color: #0033a0;
+  }
+  .red {
+    background-color: #c8102e;
+  }
+  /* Fin: bandera */
+  .contacto {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0.4rem 0;
+
+    .contacto-item {
+      display: flex;
+      gap: 1rem;
+    }
+  }
+  a {
+    color: var(--secundary-color-400);
+    border: 2px solid var(--secundary-color-900);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 16px;
+    border-radius: 50px;
+    cursor: pointer;
+
+    &:hover {
+      border: 2px solid var(--secundary-color-700);
+    }
+  }
+  a span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 0px 6px;
+    font-weight: 500;
+  }
+  .email a {
+    background: var(--secundary-color-900);
+    color: var(--primary-color-50);
+    border: none;
+    transition: 0.5s;
+
+    &:hover {
+      color: var(--primary-color-100);
+      background: #25292e;
+    }
+  }
+
+  @media (width <= 768px) {
+    .contacto {
+      flex-wrap: wrap;
+    }
+    .container {
+      flex-direction: column;
+      height: auto;
+      align-items: center;
+      justify-content: center;
+    }
+    figure {
+      width: 300px;
+    }
+  }
+</style>

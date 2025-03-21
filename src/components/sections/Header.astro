@@ -1,0 +1,125 @@
+---
+import Section from '@/components/Section.astro';
+---
+
+<Section>
+  <header id="home">
+    <nav class="navbar">
+      <a href="#home"><span>SEANDSUN</span></a>
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+      </label>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#educacion">Educación</a></li>
+      </ul>
+    </nav>
+  </header>
+</Section>
+<style>
+  header {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+    /* border: 1px solid green; */
+  }
+  span {
+    color: var(--secundary-color-500);
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    position: relative;
+  }
+  .nav-links {
+    display: flex;
+    transition: all 0.5s ease;
+  }
+  .nav-links li {
+    margin-left: 20px;
+  }
+  .nav-links li a {
+    color: #fff;
+    padding: 2px 2px;
+    border-radius: 30px;
+    transition: color 0.3s ease;
+  }
+  .nav-links li a:hover {
+    color: var(--secundary-color-400);
+  }
+  .menu-icon {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+    position: relative;
+    z-index: 1;
+  }
+  .menu-icon .line {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+    transition: all 0.5s ease;
+  }
+  #menu-toggle {
+    display: none;
+  }
+
+  @media (width <= 768px) {
+    .navbar {
+      padding: 16px;
+    }
+    .menu-icon {
+      display: flex;
+    }
+    .nav-links {
+      position: absolute;
+      top: 70px;
+      right: 0;
+      width: auto; /* 100% */
+      min-width: 200px;
+      height: 0;
+      overflow: hidden;
+      flex-direction: column;
+      text-align: center;
+      background-color: #fafafa10;
+      border-radius: 16px;
+      backdrop-filter: blur(1.5rem);
+      transition: height 0.5s ease;
+    }
+    .nav-links li {
+      margin: 0;
+      padding: 20px 0;
+      width: 100%;
+    }
+    .nav-links li a {
+      padding: 10px 20px;
+      width: 100%;
+    }
+    #menu-toggle:checked + .menu-icon + .nav-links {
+      height: auto;
+    }
+    #menu-toggle:checked + .menu-icon .line:nth-child(1) {
+      transform: rotate(45deg) translate(15px, 3px);
+    }
+    #menu-toggle:checked + .menu-icon .line:nth-child(2) {
+      transform: scale(0);
+    }
+    #menu-toggle:checked + .menu-icon .line:nth-child(3) {
+      transform: rotate(-45deg) translate(15px, -4px);
+    }
+  }
+</style>

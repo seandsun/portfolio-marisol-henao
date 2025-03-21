@@ -1,50 +1,125 @@
 ---
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Portfolio de Marisol Henao, +1 año de experiencia aprendiendo desarrollo web y ciberseguridad"
+    />
+    <meta name="viewport" content="width=device-width" />
+    <!-- TODO: cambiar este favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <!-- tipografía -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+    <!-- título -->
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
+
+<!-- ? PENDIENTE PASAR ESTILOS RESPONSIVE GLOBALES A ESTE ARCHIVO, COMO POR EJ. LOS TITULOS... TAMBIÉN FALTA PONER ALGUNAS ETIQUETAS DE SEO, VER EN LOS APUNTES DEL HTML EN OBSIDIAN -->
+
 <style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
+  :root {
+    --white-color: #fff;
+    --black-color: #000;
+    --accent-color: #0ca2e3;
+    --background-color-page: #0e0e11;
+    --primary-color-50: #f7f7f8;
+    --primary-color-100: #eeeef0;
+    --primary-color-200: #d9d9de;
+    --primary-color-300: #b8b9c1;
+    --primary-color-400: #91939f;
+    --primary-color-500: #737584;
+    --primary-color-600: #5d5e6c;
+    --primary-color-700: #4c4d58;
+    --primary-color-800: #41414b;
+    --primary-color-900: #393941;
+    --primary-color-950: #18181b;
+    --secundary-color-50: #eefff3;
+    --secundary-color-100: #d7ffe6;
+    --secundary-color-200: #b2ffcf;
+    --secundary-color-300: #7dffaf;
+    --secundary-color-400: #33f57e;
+    --secundary-color-500: #09de5c;
+    --secundary-color-600: #01b848;
+    --secundary-color-700: #05903c;
+    --secundary-color-800: #0a7133;
+    --secundary-color-900: #0a5d2d;
+    --secundary-color-950: #003416;
+
+    --h1-font-size: 4.25rem; /*  68px */
+    --h2-font-size: 2.13rem; /* 34.08px */
+    --h3-font-size: 1.6rem; /* 24px */
+    --h4-font-size: 1.125rem; /* 18px */
+  }
+  html {
+    font-family: 'DM sans', sans-serif, Verdana, Geneva, Tahoma;
+    background: var(--primary-color-100);
+    letter-spacing: -0.025rem;
+    color: var(--white-color, #fff);
+    background: var(--background-color-page, #0e0e11);
+    scroll-behavior: smooth;
+  }
+  body,
+  figure {
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    margin: 0;
+  }
+  h1 {
+    font-size: var(--h1-font-size);
+  }
+  h2 {
+    font-size: var(--h2-font-size);
+  }
+  h3 {
+    font-size: var(--h3-font-size);
+  }
+  h4 {
+    font-size: var(--h4-font-size);
+  }
+  p {
+    font-size: 1rem;
+    line-height: 1.6rem;
+    margin: 0;
+    text-wrap: pretty;
+  }
+
+  @media (width <= 768px) {
+  }
 </style>

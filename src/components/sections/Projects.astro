@@ -1,0 +1,46 @@
+---
+import Section from '@/components/Section.astro';
+import Card from '@/components/ProjectCard.astro';
+---
+
+<Section>
+  <h2 id="proyectos">Proyectos</h2>
+  <div>
+    <Card
+      card={{
+        title: 'Portfolio web',
+        descripcion:
+          'Lorem ipsum sit amet consectetur, adipisicing elit. Laborum qui animi sunt, rem, voluptatibus repellat facilis nam temporibus na facilis nam temporibus na facilis nam',
+        tecnologias: ['HTML', 'CSS', 'JavaScript', 'React', 'Node js', 'TypeScript'],
+      }}
+    />
+    <Card
+      card={{
+        title: 'Portfolio web',
+        descripcion:
+          'Lorem ipsum sit amet consectetur, adipisicing elit. Laborum qui animi sunt, rem, voluptatibus repellat facilis nam temporibus na facilis nam temporibus na',
+        tecnologias: ['HTML', 'CSS', 'React'],
+      }}
+    />
+    <Card
+      card={{
+        title: 'Portfolio web',
+        descripcion:
+          'Lorem ipsum sit amet consectetur, adipisicing elit. Laborum qui animi sunt, rem, voluptatibus repellat ',
+        tecnologias: ['HTML', 'CSS', 'JavaScript', 'Astro'],
+      }}
+    />
+  </div>
+</Section>
+
+<style>
+  h2 {
+    padding-bottom: 1.5rem;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+</style>
