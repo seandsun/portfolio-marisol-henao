@@ -1,0 +1,24 @@
+{
+  "projects": [
+    {
+      "img": "../../../public/color-palette-generator.png",
+      "alt": "Foto de la app para generar paleta de colores",
+      "title": "Generador de paleta de colores",
+      "descripcion":
+      "Este es un generador de paleta de colores que sirve para construido con herramientas como html, css, javascript y react. Lorem ipsum sit amet consectetur, adipisicing elit.",
+      "tecnologias": ["HTML", "CSS", "JavaScript", "React"],
+      "github": "https://github.com/seandsun/generador-paleta-de-colores",
+      "titleLink": "Ver código fuente de 'Generador de paleta de colores'"
+    },
+    {
+      "img": "../../../public/me.webp",
+      "alt": "Foto de la app para generar paleta de colores",
+      "title": "Portfolio de Marisol Henao",
+      "descripcion":
+      "Lorem ipsum sit amet consectetur, adipisicing elit. Laborum qui animi sunt, rem, voluptatibus repellat facilis nam temporibus na facilis nam temporibus na facilis nam",
+      "tecnologias": ["HTML", "CSS", "JavaScript", "Astro", "Json"],
+      "github": "https://github.com/seandsun/seandsun",
+      "titleLink": "Ver código fuente de 'Generador de paleta de colores'"
+    }
+  ]
+}
