@@ -10,14 +10,54 @@ const { title } = Astro.props;
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta
-      name="description"
-      content="Portfolio de Marisol Henao, +1 año de experiencia aprendiendo desarrollo web y ciberseguridad"
-    />
     <meta name="viewport" content="width=device-width" />
+    <!-- HTML meta tags -->
+    <title>{title}</title>
+    <meta
+    name="description"
+    content="Portfolio de Marisol Henao, +1 año de experiencia aprendiendo desarrollo web y ciberseguridad"
+    />
     <!-- TODO: cambiar este favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+
+    <!-- Open graph -->
+    <meta 
+    property="og:url" 
+    content=""
+    />
+    <meta 
+    property="og:type" 
+    content="website"
+    />
+    <meta 
+    property="og:title" 
+    content="Portfolio de Marisol Henao, Front-End developer"
+    />
+    <meta 
+    property="og:description" 
+    content="Portfolio de Marisol Henao, +1 año de experiencia aprendiendo desarrollo web y ciberseguridad"
+    />
+    <meta 
+    property="og:image" 
+    content="../../public/og.jpg"
+    />
+    <meta 
+    property="og:locale" 
+    content="es_ES"
+    />
+    <meta 
+    property="og:site_name" 
+    content="Portfolio de Marisol Henao"
+    />
+
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content=""/>
+    <meta name="twitter:creator" content="@Henao_12"/>
+    <meta name="twitter:title" content="Portfolio de Marisol Henao, Front-End developer"/>
+    <meta name="twitter:description" content="Portfolio de Marisol Henao, +1 año de experiencia aprendiendo desarrollo web y ciberseguridad"/> 
+    <meta name="twitter:image" content="../../public/og.jpg"/>   
+    
     <!-- tipografía -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,15 +65,11 @@ const { title } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
       rel="stylesheet"
     />
-    <!-- título -->
-    <title>{title}</title>
   </head>
   <body>
     <slot />
   </body>
 </html>
-
-<!-- ? PENDIENTE PASAR ESTILOS RESPONSIVE GLOBALES A ESTE ARCHIVO, COMO POR EJ. LOS TITULOS... TAMBIÉN FALTA PONER ALGUNAS ETIQUETAS DE SEO, VER EN LOS APUNTES DEL HTML EN OBSIDIAN -->
 
 <style is:global>
   :root {
