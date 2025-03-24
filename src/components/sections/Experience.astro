@@ -5,8 +5,18 @@ import Section from '@/components/Section.astro';
 <Section>
   <h2 id="experiencia">Experiencia</h2>
   <div>
-    <p>La experiencia laboral que tengo ha sido trabajando como Asesora Comercial en un Centro de Servicios Educativos de la Fundación Universitaria Católica del Norte.</p>
-    <p>En cuanto al campo del Desarrollo Web y la Ciberseguridad aún no he tenido la oportunidad de trabajar en una empresa, pero, he ido adquiriendo experiencia al realizar proyectos para practicar mis conocimientos y mejorar mis habilidades mientras continúo mis estudios.</p>
+    <p>Mi experiencia profesional incluye el cargo de <strong>Asesora Comercial</strong> en un Centro de Servicios Educativos de la 
+      <a 
+        href="https://ucn.edu.co/" 
+        title="Web de la fundación universitaria católica del norte"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Fundación Universitaria Católica del Norte
+      </a>.
+    </p>
+
+    <p>En el ámbito del <strong>Desarrollo Web</strong> y la <strong>Ciberseguridad</strong>, aunque aún no he tenido la oportunidad de formar parte de una empresa, he adquirido <strong>experiencia</strong> mediante el desarrollo de proyectos prácticos que me han permitido perfeccionar mis conocimientos y habilidades, mientras continúo con mis estudios en la carrera de <strong>Ingeniería Informática</strong>.</p>
   </div>
 </Section>
 
@@ -18,5 +28,9 @@ import Section from '@/components/Section.astro';
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
+
+    a {
+      color: var(--secundary-color-400);
+    }
   }
 </style>
