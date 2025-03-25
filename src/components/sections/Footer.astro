@@ -1,8 +1,5 @@
 ---
-import GitHub from '@/icons/GitHub.astro';
-import LinkedIn from '@/icons/LinkedIn.astro';
-import Mail from '@/icons/Mail.astro';
-import Cv from '@/icons/cv.astro';
+import Contacto from "../Contacto.astro"
 ---
 
 <footer>
@@ -10,37 +7,7 @@ import Cv from '@/icons/cv.astro';
   <div class="container">
     <p>Hecho por Marisol Henao - 2024</p>
     <div class="contacto">
-      <div class="contacto-item">
-        <a
-          href="https://www.linkedin.com/in/marisol-henao-grajales"
-          title="Visitar el perfil de Marisol en LinkedIn"
-          target="_blank"
-          rel="noopener noreferrer"><LinkedIn width="24" heigth="24" /></a
-        >
-        <a
-          href="https://github.com/seandsun"
-          title="Visitar el perfil de Marisol en GitHub"
-          target="_blank"
-          rel="noopener noreferrer"><GitHub width="24" heigth="24" /></a
-        >
-        <a
-          href="/portfolio-marisol-henao/cv.pdf"
-          title="Visitar el curriculum vitae de Marisol en formato pdf"
-          target="_blank"
-          rel="noopener noreferrer"><Cv width="24" heigth="24" /></a
-        >
-      </div>
-      <div class="email">
-        <a
-          href="marisolhenoa.dev@gmail.com"
-          title="Enviar un correo electrónico a Marisol al correo marisolhenao.dev@gmail"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <span><Mail width="24" heigth="24" /> marisolhenao.dev@gmail.com</span
-          ></a
-        >
-      </div>
+      <Contacto />
     </div>
   </div>
 </footer>
@@ -76,48 +43,6 @@ import Cv from '@/icons/cv.astro';
     flex-direction: column;
     gap: 1rem;
     padding: 0.4rem 0;
-
-
-    .contacto-item {
-      display: flex;
-      gap: 1rem;
-    }
-  }
-
-  a {
-    color: var(--secundary-color-400);
-    border: 2px solid var(--secundary-color-900);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px 16px;
-    border-radius: 50px;
-    cursor: pointer;
-
-    &:hover {
-      border: 2px solid var(--secundary-color-700);
-    }
-  }
-
-  a span {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4px;
-    padding: 0px 6px;
-    font-weight: 500;
-  }
-
-  .email a {
-    background: var(--secundary-color-900);
-    color: var(--primary-color-50);
-    border: none;
-    transition: 0.5s;
-
-    &:hover {
-      color: var(--primary-color-100);
-      background: #25292e;
-    }
   }
 
   @media (width <= 768px) {
