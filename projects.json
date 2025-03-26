@@ -7,8 +7,10 @@
       "descripcion":
       "Herramienta para generar una paleta de colores que contenga una armonía visual coherente.",
       "tecnologias": ["HTML", "CSS", "JavaScript", "React"],
-      "github": "https://github.com/seandsun/generador-paleta-de-colores",
-      "titleLink": "Ver código fuente de 'Generador de paleta de colores'"
+      "url": "https://seandsun.github.io/generador-paleta-de-colores/",
+      "titleUrl": "Ver demo del generador de paleta de colores",
+      "linkGithub": "https://github.com/seandsun/generador-paleta-de-colores",
+      "titleLinkGithub": "Ver código fuente de 'Generador de paleta de colores'"
     }
   ]
 }
