@@ -1,7 +1,7 @@
 ---
 import Section from '@/components/Section.astro';
 import GitHub from '@/icons/GitHub.astro';
-import { projects } from '@projects'
+import { projects } from '@projects';
 ---
 
 <Section>
@@ -9,48 +9,58 @@ import { projects } from '@projects'
   <div class="container">
     {
       projects.map(
-        ({img, alt, title, descripcion, tecnologias, github, titleLink}) => {
+        ({ img, alt, title, descripcion, tecnologias, url, titleUrl, linkGithub, titleLinkGithub }) => {
           return (
             <article>
-            
-            <img src={img} loading="lazy" alt={alt} />
-        
-            <div class="info">
-              <header>
-                <h3>{title}</h3>
-                <p>{descripcion}</p>
-                <div class="items">
-                  {
-                    tecnologias.map((tecnologia) => {
+              <img src={img} loading="lazy" alt={alt} />
+
+              <div class="info">
+                <header>
+                  <h3>{title}</h3>
+                  <p>{descripcion}</p>
+                  <div class="items">
+                    {tecnologias.map((tecnologia) => {
                       return <span class="item">{tecnologia}</span>;
-                    })
-                  }
+                    })}
+                  </div>
+                </header>
+
+                <div class="container-link">
+                  <div class="link">
+                    <a
+                      href={url}
+                      title={titleUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Demo
+                    </a>
+                  </div>
+                  <div class="link">
+                    <a
+                      href={linkGithub}
+                      title={titleLinkGithub}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Ver código fuente
+                    </a>
+                    <a
+                      href={linkGithub}
+                      title={titleLinkGithub}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <GitHub width={16} height={16} />
+                    </a>
+                  </div>
                 </div>
-              </header>
-        
-              <div class="link">
-                <a 
-                  href={github} 
-                  title={titleLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >
-                    Ver código fuente
-                  </a>
-                <a 
-                  href={github} 
-                  title={titleLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  >
-                    <GitHub width={16} height={16} />
-                  </a>
               </div>
-            </div>
-    </article>
-          )
-        })
-      }
+            </article>
+          );
+        }
+      )
+    }
   </div>
 </Section>
 
@@ -58,13 +68,11 @@ import { projects } from '@projects'
   h2 {
     padding-bottom: 1.5rem;
   }
-
   .container {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
   }
-  
   article {
     display: flex;
     gap: 2rem;
@@ -116,29 +124,35 @@ import { projects } from '@projects'
       line-height: 24px;
     }
   }
-  .link {
+
+  .container-link {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 8px 16px;
-    font-weight: 500;
-    color: var(--secundary-color-950, #000);
-    background: linear-gradient(
-      267deg,
-      var(--accent-color, #0ca2e3) 10%,
-      var(--secundary-color-500, #09de5c) 100%
-    );
-    border-radius: 6px;
-    width: fit-content;
-    transition: 0.6s;
+    gap: 20px;
 
-    &:hover {
-      gap: 16px;
-    }
+    .link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      font-weight: 500;
+      color: var(--secundary-color-950, #000);
+      background: linear-gradient(
+        267deg,
+        var(--accent-color, #0ca2e3) 10%,
+        var(--secundary-color-500, #09de5c) 100%
+      );
+      border-radius: 6px;
+      width: fit-content;
+      transition: 0.4s;
 
-    a {
-      color: var(--secundary-color-950);
-      display: inline-flex;
+      &:hover {
+        box-shadow: 0px 5px 40px -4px var(--accent-color);
+      }
+
+      a {
+        color: var(--secundary-color-950);
+        display: inline-flex;
+      }
     }
   }
 
@@ -152,7 +166,6 @@ import { projects } from '@projects'
       align-items: center;
       max-width: 500px;
     }
-
     img {
       width: 100%;
       object-fit: cover;
