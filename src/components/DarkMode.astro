@@ -50,9 +50,9 @@
 <script>
   const themeToggle = document.querySelector(
     '.theme-switch input[type="checkbox"]'
-  );
+  ) as HTMLInputElement;
 
-  const currentTheme = localStorage.getItem('theme');
+  const currentTheme: string | null = localStorage.getItem('theme');
 
   if (currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -62,8 +62,9 @@
     }
   }
 
-  function switchTheme(e) {
-    if (e.target.checked) {
+  function switchTheme(e: Event): void {
+    const target = e.target as HTMLInputElement; 
+    if (target.checked) {
       document.documentElement.setAttribute('data-theme', 'dark');
       localStorage.setItem('theme', 'dark');
     } else {
