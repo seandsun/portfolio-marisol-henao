@@ -1,5 +1,6 @@
 ---
 import Section from '@/components/Section.astro';
+import DarkMode from '@/components/DarkMode.astro';
 ---
 
 <Section>
@@ -20,6 +21,10 @@ import Section from '@/components/Section.astro';
         <li><a href="#habilidades">Habilidades</a></li>
         <li><a href="#educacion">Educación</a></li>
       </ul>
+
+      <div class="dark-mode">
+        <DarkMode />
+      </div>
     </nav>
   </header>
 </Section>
@@ -28,10 +33,9 @@ import Section from '@/components/Section.astro';
     padding: 30px 0;
     display: flex;
     justify-content: space-between;
-    /* border: 1px solid green; */
   }
   span {
-    color: var(--secundary-color-500);
+    color: var(--hover-color);
     font-size: 1.4rem;
     font-weight: 700;
     letter-spacing: 2px;
@@ -51,26 +55,25 @@ import Section from '@/components/Section.astro';
     margin-left: 20px;
   }
   .nav-links li a {
-    color: #fff;
+    color: var(--white-color, #fff);
     padding: 2px 2px;
     border-radius: 30px;
     transition: color 0.3s ease;
   }
   .nav-links li a:hover {
-    color: var(--secundary-color-400);
+    color: var(--hover-color);
   }
   .menu-icon {
     display: none;
     flex-direction: column;
     cursor: pointer;
-    margin-left: auto;
     position: relative;
     z-index: 1;
   }
   .menu-icon .line {
     width: 30px;
     height: 3px;
-    background-color: #fff;
+    background-color: var(--white-color);
     margin: 5px 0;
     transition: all 0.5s ease;
   }
@@ -120,6 +123,20 @@ import Section from '@/components/Section.astro';
     }
     #menu-toggle:checked + .menu-icon .line:nth-child(3) {
       transform: rotate(-45deg) translate(15px, -4px);
+    }
+  }
+
+  @media (width <= 768px) {
+    .navbar {
+      gap: 20px;
+    }
+
+    .menu-icon {
+      order: 1;
+    }
+
+    .dark-mode {
+      margin-left: auto;
     }
   }
 </style>

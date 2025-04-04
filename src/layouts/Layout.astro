@@ -100,11 +100,51 @@ const { title } = Astro.props;
     --secundary-color-900: #0a5d2d;
     --secundary-color-950: #003416;
 
+    --hover-color: var(--secundary-color-500);
+    --hero-color: var(--secundary-color-300);
+    --hero-color-contacto: var(--background-color-page);
+    --hover-color-projects: var(--primary-color-950);
+
     --h1-font-size: 4.25rem; /*  68px */
     --h2-font-size: 2.13rem; /* 34.08px */
     --h3-font-size: 1.6rem; /* 24px */
     --h4-font-size: 1.125rem; /* 18px */
   }
+
+  [data-theme='dark'] {
+    --white-color: #000;
+    --black-color: #fff;
+    --accent-color: #0ca2e3;
+    --background-color-page: #eeeef0;
+    --primary-color-50: #f7f7f8;
+    --primary-color-100: #eeeef0;
+    --primary-color-200: #d9d9de;
+    --primary-color-300: #b8b9c1;
+    --primary-color-400: #91939f;
+    --primary-color-500: #737584;
+    --primary-color-600: #5d5e6c;
+    --primary-color-700: #4c4d58;
+    --primary-color-800: #41414b;
+    --primary-color-900: #393941;
+    --primary-color-950: #18181b;
+    --secundary-color-50: #eefff3;
+    --secundary-color-100: #d7ffe6;
+    --secundary-color-200: #b2ffcf;
+    --secundary-color-300: #7dffaf;
+    --secundary-color-400: #33f57e;
+    --secundary-color-500: #09de5c;
+    --secundary-color-600: #01b848;
+    --secundary-color-700: #05903c;
+    --secundary-color-800: #0a7133;
+    --secundary-color-900: #0a5d2d;
+    --secundary-color-950: #003416;
+
+    --hover-color: var(--accent-color);
+    --hero-color: var(--secundary-color-600);
+    --hero-color-contacto: var(--secundary-color-900);
+    --hover-color-projects: var(--primary-color-50);
+  }
+
   html {
     font-family: 'DM sans', sans-serif, Verdana, Geneva, Tahoma;
     background: var(--primary-color-100);
@@ -112,6 +152,7 @@ const { title } = Astro.props;
     color: var(--white-color, #fff);
     background: var(--background-color-page, #0e0e11);
     scroll-behavior: smooth;
+    transition: all .3s ease-in-out;
   }
   body,
   figure {
@@ -154,8 +195,5 @@ const { title } = Astro.props;
     line-height: 1.6rem;
     margin: 0;
     text-wrap: pretty;
-  }
-
-  @media (width <= 768px) {
   }
 </style>
