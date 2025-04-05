@@ -14,50 +14,51 @@ const { title } = Astro.props;
     <!-- HTML meta tags -->
     <title>{title}</title>
     <meta
-    name="description"
-    content="Portfolio de Marisol Henao, +1 año de experiencia aprendiendo desarrollo web y ciberseguridad"
+      name="description"
+      content="Portfolio de Marisol Henao, +1 año de experiencia aprendiendo desarrollo web y ciberseguridad"
     />
-    <link rel="icon" type="image/svg+xml" href="/portfolio-marisol-henao/favicon.svg" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/portfolio-marisol-henao/favicon.svg"
+    />
 
     <!-- Open graph -->
-    <meta 
-    property="og:url" 
-    content="https://seandsun.github.io/portfolio-marisol-henao/"
+    <meta
+      property="og:url"
+      content="https://seandsun.github.io/portfolio-marisol-henao/"
     />
-    <meta 
-    property="og:type" 
-    content="website"
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Portfolio de Marisol Henao, Front-End developer"
     />
-    <meta 
-    property="og:title" 
-    content="Portfolio de Marisol Henao, Front-End developer"
+    <meta
+      property="og:description"
+      content="Portfolio de Marisol Henao, +1 año de experiencia aprendiendo desarrollo web y ciberseguridad"
     />
-    <meta 
-    property="og:description" 
-    content="Portfolio de Marisol Henao, +1 año de experiencia aprendiendo desarrollo web y ciberseguridad"
-    />
-    <meta 
-    property="og:image" 
-    content="/portfolio-marisol-henao/og.jpg"
-    />
-    <meta 
-    property="og:locale" 
-    content="es_CO"
-    />
-    <meta 
-    property="og:site_name" 
-    content="Portfolio de Marisol Henao"
-    />
+    <meta property="og:image" content="/portfolio-marisol-henao/og.jpg" />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Portfolio de Marisol Henao" />
 
     <!-- twitter -->
-    <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@Henao_012"/>
-    <meta property="twitter:url" content="https://seandsun.github.io/portfolio-marisol-henao/">
-    <meta name="twitter:creator" content="@Henao_012"/>
-    <meta name="twitter:title" content="Portfolio de Marisol Henao, Front-End developer"/>
-    <meta name="twitter:description" content="Portfolio de Marisol Henao, +1 año de experiencia aprendiendo desarrollo web y ciberseguridad"/> 
-    <meta name="twitter:image" content="/portfolio-marisol-henao/og.jpg"/>   
-    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@Henao_012" />
+    <meta
+      property="twitter:url"
+      content="https://seandsun.github.io/portfolio-marisol-henao/"
+    />
+    <meta name="twitter:creator" content="@Henao_012" />
+    <meta
+      name="twitter:title"
+      content="Portfolio de Marisol Henao, Front-End developer"
+    />
+    <meta
+      name="twitter:description"
+      content="Portfolio de Marisol Henao, +1 año de experiencia aprendiendo desarrollo web y ciberseguridad"
+    />
+    <meta name="twitter:image" content="/portfolio-marisol-henao/og.jpg" />
+
     <!-- tipografía -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -104,6 +105,8 @@ const { title } = Astro.props;
     --hero-color: var(--secundary-color-300);
     --hero-color-contacto: var(--background-color-page);
     --hover-color-projects: var(--primary-color-950);
+    --item-color-projects: var(--secundary-color-600);
+    --parrafo-education: var(--primary-color-400);
 
     --h1-font-size: 4.25rem; /*  68px */
     --h2-font-size: 2.13rem; /* 34.08px */
@@ -114,8 +117,8 @@ const { title } = Astro.props;
   [data-theme='dark'] {
     --white-color: #000;
     --black-color: #fff;
-    --accent-color: #0ca2e3;
-    --background-color-page: #eeeef0;
+    --accent-color: var(--secundary-color-700);
+    --background-color-page: var(--primary-color-100);
     --primary-color-50: #f7f7f8;
     --primary-color-100: #eeeef0;
     --primary-color-200: #d9d9de;
@@ -140,9 +143,11 @@ const { title } = Astro.props;
     --secundary-color-950: #003416;
 
     --hover-color: var(--accent-color);
-    --hero-color: var(--secundary-color-600);
+    --hero-color: var(--secundary-color-700);
     --hero-color-contacto: var(--secundary-color-900);
     --hover-color-projects: var(--primary-color-50);
+    --item-color-projects: var(--secundary-color-800);
+    --parrafo-education: var(--primary-color-600);
   }
 
   html {
@@ -152,7 +157,7 @@ const { title } = Astro.props;
     color: var(--white-color, #fff);
     background: var(--background-color-page, #0e0e11);
     scroll-behavior: smooth;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
   }
   body,
   figure {
