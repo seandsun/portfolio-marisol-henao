@@ -1,0 +1,111 @@
+---
+import Section from '@/components/Section.astro';
+import DarkMode from '@/components/DarkMode.astro';
+import Logo from '@/assets/icons/logo.svg';
+import IconClose from '@/assets/icons/menu-close.astro';
+import IconOpen from '@/assets/icons/menu-open.astro';
+
+interface NavItem {
+  name: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  {
+    name: 'Experiencia',
+    href: '#experiencia',
+  },
+  {
+    name: 'Proyectos',
+    href: '#proyectos',
+  },
+  {
+    name: 'Educación',
+    href: '#educacion',
+  },
+  {
+    name: 'Sobre mí',
+    href: '#sobre-mi',
+  },
+];
+---
+
+<Section>
+  <header
+    class="rounded-lg bg-Neutral-50 dark:bg-Neutral-800 mt-3 py-2 px-4 md:py-2 md:px-8"
+  >
+    <nav class="flex justify-between items-center">
+      <!-- Logo -->
+      <a class="bg-white dark:bg-Neutral-700 rounded-full p-1" href="#home"
+        ><span
+          class="text-Text-Inverted dark:text-Text flex justify-center items-center"
+          ><Logo /></span
+        ></a
+      >
+      <!-- Abrir menú -->
+      <div
+        class="text-Text-Inverted dark:text-Text order-3 md:order-none md:hidden"
+        id="open-btn"
+      >
+        <IconOpen width="32" heigth="32" />
+      </div>
+
+      <!-- Menú modal -->
+      <div
+        class="bg-Neutral-900/50 dark:bg-Neutral-50/50 z-10 fixed inset-0 hidden md:static md:inset-auto md:block"
+        id="menu-modal"
+      >
+        <div
+          class="bg-Neutral-50 dark:bg-Neutral-800 absolute right-0 top-0 h-screen flex flex-col items-end px-5 py-7 md:static md:inset-auto md:h-auto md:p-0"
+        >
+          <!-- Cerrar menú -->
+          <div
+            class="text-Text-Inverted dark:text-Text md:hidden"
+            id="close-btn"
+          >
+            <IconClose width="32" heigth="32" />
+          </div>
+          <!-- Menú -->
+          <ul
+            class="flex flex-col gap-6 w-64 text-lg mt-6 md:flex-row md:gap-4 md:w-auto md:text-base md:mt-0"
+          >
+            {
+              navItems.map((item: NavItem) => (
+                <li>
+                  <a class="lista lista-hover" href={item.href}>
+                    {item.name}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+      <!-- Botón dark mode -->
+      <div class="flex justify-center items-center order-2 md:order-none">
+        <DarkMode />
+      </div>
+    </nav>
+  </header>
+</Section>
+
+<script>
+  const $menuModal = document.getElementById('menu-modal');
+  const $closeBtn = document.getElementById('close-btn');
+  const $openBtn = document.getElementById('open-btn');
+  const $menuItems = document.querySelectorAll('ul a');
+
+  $closeBtn?.addEventListener('click', () => {
+    $menuModal?.classList.add('hidden');
+  });
+
+  $openBtn?.addEventListener('click', () => {
+    $menuModal?.classList.remove('hidden');
+  });
+
+  $menuItems.forEach((item) => {
+    item.addEventListener('click', () => {
+      $menuModal?.classList.add('hidden');
+    });
+  });
+</script>

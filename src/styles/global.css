@@ -1,0 +1,63 @@
+@import 'tailwindcss';
+
+/* Dark mode */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  src: url('/fonts/dm-sans/DMSans-VariableFont_opsz-wght.ttf')
+    format('truetype');
+  font-display: swap;
+}
+
+@theme {
+  --color-Yellow-50: hsl(60, 92%, 95%);
+  --color-Yellow-100: hsl(59, 100%, 88%);
+  --color-Yellow-200: hsl(57, 100%, 77%);
+  --color-Yellow-300: hsl(55, 100%, 65%);
+  --color-Yellow-400: hsl(52, 98%, 53%);
+  --color-Yellow-500: hsl(50, 95%, 47%);
+  --color-Yellow-600: hsl(45, 98%, 40%);
+  --color-Yellow-700: hsl(39, 94%, 33%);
+  --color-Yellow-800: hsl(36, 82%, 29%);
+  --color-Yellow-900: hsl(32, 74%, 25%);
+  --color-Yellow-950: hsl(30, 86%, 14%);
+  --color-Neutral-50: #e5e8ef;
+  --color-Neutral-100: #d6dae5;
+  --color-Neutral-200: #b6bdd2;
+  --color-Neutral-300: #97a1be;
+  --color-Neutral-400: #7784ab;
+  --color-Neutral-500: #5c6a93;
+  --color-Neutral-600: #485374;
+  --color-Neutral-700: #353d54;
+  --color-Neutral-800: #212635;
+  --color-Neutral-900: #0d0f16;
+
+  --color-Text: var(--color-Neutral-50);
+  --color-Text-Inverted: var(--color-Neutral-900);
+
+  --font-DM-Sans: 'DM Sans', 'sans-serif';
+}
+
+/*
+Gradients
+*/
+@utility dark-gradient {
+  background: linear-gradient(180deg, #040918 30%, #141e30 100%);
+  background-repeat: no-repeat;
+}
+@utility light-gradient {
+  background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  background-repeat: no-repeat;
+}
+
+@layer components {
+  .lista {
+    @apply py-2 px-3;
+  }
+  .lista-hover {
+    @apply relative inline-block after:block after:h-0.5 after:bg-Neutral-400 dark:after:bg-Yellow-400 after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100 after:origin-left;
+  }
+}
