@@ -32,22 +32,23 @@ const navItems: NavItem[] = [
 
 <Section>
   <header
-    class="rounded-lg bg-Neutral-50 dark:bg-Neutral-800 mt-3 py-2 px-4 md:py-2 md:px-8"
+    class="rounded-lg shadow-3xl dark:shadow-none bg-Neutral-50 dark:bg-Neutral-800 mt-6 py-2 px-4 md:py-2 md:px-8"
   >
     <nav class="flex justify-between items-center">
       <!-- Logo -->
-      <a class="bg-white dark:bg-Neutral-700 rounded-full p-1" href="#home"
-        ><span
-          class="text-Text-Inverted dark:text-Text flex justify-center items-center"
-          ><Logo /></span
-        ></a
+      <a
+        class="text-Yellow-500 shadow-2xl shadow-white dark:text-Yellow-400 flex justify-center items-center"
+        href="#home"
+        aria-label="Logo del portfolio"
       >
+        <Logo />
+      </a>
       <!-- Abrir menú -->
       <div
         class="text-Text-Inverted dark:text-Text order-3 md:order-none md:hidden"
         id="open-btn"
       >
-        <IconOpen width="32" heigth="32" />
+        <IconOpen width="32" heigth="32" class="cursor-pointer" />
       </div>
 
       <!-- Menú modal -->
@@ -63,7 +64,7 @@ const navItems: NavItem[] = [
             class="text-Text-Inverted dark:text-Text md:hidden"
             id="close-btn"
           >
-            <IconClose width="32" heigth="32" />
+            <IconClose width="32" heigth="32" class="cursor-pointer" />
           </div>
           <!-- Menú -->
           <ul
