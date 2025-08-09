@@ -1,0 +1,56 @@
+---
+import Mail from '@/assets/icons/mail.astro';
+import Copy from '@/assets/icons/copy.astro';
+import CopyCheck from '@/assets/icons/copy-check.astro';
+---
+
+<div
+  class="flex justify-center items-center gap-5 w-full h-full relative md:justify-end md:mr-4"
+>
+  <Mail
+    class:list={'size-20  absolute -bottom-9 -left-9 text-white dark:text-Neutral-400/30 md:size-32 md:-bottom-14'}
+  />
+  <div
+    class="flex items-center gap-4 py-3 px-7 select-text border border-Neutral-100 dark:border-Neutral-700 rounded-lg bg-white dark:bg-Neutral-900 hover:dark:bg-Neutral-800 md:dark:bg-Neutral-900/40 transition-all duration-300 ease-in-out"
+  >
+    <p class="text-sm md:text-base" id="email">marisolhenao.dev@gmail.com</p>
+
+    <button class="cursor-pointer" id="copy-btn">
+      <Copy id="copy" />
+      <CopyCheck class:list={'hidden'} id="copy-check" />
+    </button>
+  </div>
+</div>
+
+<script>
+  const $email: HTMLElement | null = document.getElementById('email');
+  const $copyBtn = document.getElementById(
+    'copy-btn'
+  ) as HTMLButtonElement | null;
+  const $copy = document.getElementById('copy');
+  const $copyCheck = document.getElementById('copy-check');
+
+  function copyEmailToClipboard(): void {
+    if ($email && $copyBtn) {
+      const emailText: string = $email.innerText;
+
+      navigator.clipboard
+        .writeText(emailText)
+        .then(() => {
+          $copy?.classList.add('hidden');
+          $copyCheck?.classList.remove('hidden');
+          $copyCheck?.classList.add('dark:text-Yellow-400', 'text-Yellow-600');
+
+          setTimeout(() => {
+            $copy?.classList.remove('hidden');
+            $copyCheck?.classList.add('hidden');
+          }, 1000);
+        })
+        .catch((err: Error) => {
+          console.error('Error al copiar el texto: ', err);
+        });
+    }
+  }
+
+  $copyBtn?.addEventListener('click', copyEmailToClipboard);
+</script>

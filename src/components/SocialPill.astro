@@ -1,0 +1,19 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  styles?: string;
+}
+
+const { href, title, styles } = Astro.props as Props;
+---
+
+<a
+  class={`inline-flex items-center justify-center ${styles}`}
+  href={href}
+  title={title}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <slot />
+</a>

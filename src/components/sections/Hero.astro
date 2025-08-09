@@ -1,0 +1,153 @@
+---
+import { Image } from 'astro:assets';
+import Section from '@/components/Section.astro';
+import imgHero from '@/assets/images/me.webp';
+import Linkedin from '@/assets/icons/linkedin.astro';
+import GitHub from '@/assets/icons/github.astro';
+import Cv from '@/assets/icons/cv.astro';
+import Puzzle from '@/assets/icons/puzzle.astro';
+import SocialPill from '@/components/SocialPill.astro';
+import SocialPillMail from '@/components/SocialPillMail.astro';
+import Arrow from '../Arrow.astro';
+import Tooltip from '@/components/Tooltip.astro';
+---
+
+<Section>
+  <div class="grid gap-3 md:grid-cols-5 md:grid-rows-5">
+    <!-- 1 -->
+    <div
+      class="col-span-1 bg-bento flex gap-4 md:col-span-2 md:row-span-3 md:flex-col"
+    >
+      <Image
+        class:list={'size-[80px] rounded-full ml-3 md:m-auto md:size-[200px] md:order-2'}
+        src={imgHero}
+        alt="Foto de Marisol Henao"
+      />
+      <div class="mx-0 my-auto md:ml-2">
+        <div
+          class="w-[30px] h-[20px] flex flex-col border border-Neutral-100/40 rounded-[3px] overflow-hidden"
+        >
+          <div class="flex-1/4 bg-yellow-500"></div>
+          <div class="flex-1 bg-blue-500"></div>
+          <div class="flex-1 bg-red-500"></div>
+        </div>
+      </div>
+      <p
+        class="text-Neutral-700 dark:text-Neutral-400 text-sm font-medium mx-0 my-auto md:text-right md:font-semibold md:order-3 md:mr-2 md:mt-1.5"
+      >
+        Colombia (Medellín)
+      </p>
+    </div>
+    <!-- 2 -->
+    <div
+      class="col-span-1 bg-bento p-3.5 flex items-center md:col-span-3 md:row-span-2"
+    >
+      <h1
+        class="text-5xl leading-9 md:leading-11 font-medium text-center bg-linear-to-r from-Yellow-900 to-Neutral-600 bg-clip-text text-transparent dark:bg-linear-to-r dark:from-Yellow-500 dark:to-Neutral-400 md:text-6xl md:font-extrabold"
+      >
+        Marisol Henao <span
+          class="text-3xl bg-linear-to-r from-Neutral-600 to-Yellow-900 bg-clip-text dark:bg-linear-to-r dark:from-Neutral-400 dark:to-Yellow-500 md:text-4xl"
+          >Frontend Developer</span
+        >
+      </h1>
+    </div>
+    <!-- 3 -->
+    <div
+      class="col-span-1 bg-bento group flex flex-col justify-between gap-8 px-6 overflow-visible cursor-pointer md:col-span-3 md:row-span-2 md:col-start-1 md:col-end-3 md:row-start-4 md:row-end-6"
+    >
+      <div class="flex justify-between items-center">
+        <Tooltip />
+      </div>
+      <div class="flex items-end justify-center gap-2">
+        <h2 class="text-Neutral-700 dark:text-Neutral-300 font-medium">
+          El navegador es mi lienzo y yo le doy vida creando un componente a la
+          vez.
+        </h2>
+        <div
+          class="size-14 flex-1/2 flex items-center justify-center rounded-full bg-Yellow-500 dark:bg-Yellow-800/40"
+        >
+          <Puzzle
+            class:list={'size-9 text-white dark:text-Yellow-300 rounded-full pl-1 pb-1'}
+          />
+        </div>
+      </div>
+    </div>
+    <!-- 4 -->
+    <div
+      class="col-span-1 flex gap-3 md:col-span-2 md:row-span-2 md:col-start-3 md:col-end-6 md:row-start-3 md:row-end-5"
+    >
+      <div
+        class="bg-bento group flex-1/2 flex flex-col items-center justify-end gap-5 relative"
+      >
+        <Arrow
+          styles="bg-white text-purple-500 dark:bg-purple-400 shadow-3xl"
+        />
+        <SocialPill
+          href="https://github.com/seandsun"
+          title="Visitar el perfil de Marisol en GitHub"
+        >
+          <GitHub
+            class:list={'size-10 p-2 rounded-full bg-white text-purple-500 shadow-xl dark:shadow-none dark:border-2 dark:border-purple-400 dark:text-purple-400 dark:bg-purple-600/20 md:size-16 md:p-3 group-hover:dark:bg-purple-600/10 group-hover:dark:border-purple-300 group-hover:dark:text-purple-300'}
+          />
+        </SocialPill>
+        <p class="btn-bento">GitHub</p>
+
+        <a
+          href="https://github.com/seandsun"
+          target="_blank"
+          class="absolute inset-0 z-0"
+        >
+          <span class="sr-only">Visitar el perfil de GitHub de Marisol</span>
+        </a>
+      </div>
+      <div
+        class="bg-bento group flex-1/2 flex flex-col items-center justify-end gap-5 relative"
+      >
+        <Arrow styles="bg-white text-blue-500 dark:bg-blue-400 shadow-3xl" />
+        <SocialPill
+          href="https://www.linkedin.com/in/marisol-henao-grajales"
+          title="Visitar el perfil de Marisol en LinkedIn"
+          ><Linkedin
+            class:list={'size-10 p-2 rounded-full bg-white text-blue-500 shadow-xl dark:shadow-none dark:border-2 dark:border-blue-400 dark:text-blue-400 dark:bg-blue-600/20 md:size-16 md:p-3 group-hover:dark:bg-blue-600/10 group-hover:dark:border-blue-300 group-hover:dark:text-blue-300'}
+          />
+        </SocialPill>
+        <p class="btn-bento">LinkedIn</p>
+        <a
+          href="https://www.linkedin.com/in/marisol-henao-grajales"
+          title="Visitar el perfil de Marisol en LinkedIn"
+          target="_blank"
+          class="absolute inset-0 z-0"
+        >
+          <span class="sr-only">Visitar el perfil de LinkedIn de Marisol</span>
+        </a>
+      </div>
+      <div
+        class="bg-bento group flex-1/2 flex flex-col items-center justify-end gap-5 relative"
+      >
+        <Arrow styles="bg-white text-green-500 dark:bg-green-400 shadow-3xl" />
+        <SocialPill
+          href="/portfolio-marisol-henao/cv.pdf"
+          title="Visitar el currículum vitae de Marisol en formato pdf"
+          ><Cv
+            class:list={'size-10 p-2 rounded-full bg-white text-green-500 shadow-xl dark:shadow-none dark:border-2 dark:border-green-400 dark:text-green-400 dark:bg-green-600/20  md:size-16 md:p-3 group-hover:dark:bg-green-600/10 group-hover:dark:border-green-300 group-hover:dark:text-green-300'}
+          />
+        </SocialPill>
+        <p class="btn-bento">Currículum</p>
+        <a
+          href="/portfolio-marisol-henao/cv.pdf"
+          title="Visitar el currículum vitae de Marisol en formato pdf"
+          target="_blank"
+          class="absolute inset-0 z-0"
+        >
+          <span class="sr-only">Visitar el currículum de Marisol</span>
+        </a>
+      </div>
+    </div>
+    <!-- 5 -->
+    <div
+      class="col-span-1 bg-bento flex items-center justify-center md:col-span-3"
+    >
+      <SocialPillMail />
+    </div>
+  </div>
+</Section>

@@ -1,0 +1,15 @@
+---
+import ArrowUp from '@/assets/icons/arrow-up.astro';
+
+interface Props {
+  styles?: string;
+}
+
+const { styles } = Astro.props;
+---
+
+<div
+  class={`absolute rounded-full top-3 right-3 rotate-45 dark:text-Text-Inverted group-hover:translate-x-1 group-hover:-translate-y-1 transition-all duracion-300 ease-in ${styles}`}
+>
+  <ArrowUp class:list={'size-3 md:size-6'} />
+</div>
