@@ -15,7 +15,11 @@ import CopyCheck from '@/assets/icons/copy-check.astro';
   >
     <p class="text-sm md:text-base" id="email">marisolhenao.dev@gmail.com</p>
 
-    <button class="cursor-pointer" id="copy-btn">
+    <button
+      class="cursor-pointer"
+      id="copy-btn"
+      aria-label="Botón para copiar email"
+    >
       <Copy id="copy" />
       <CopyCheck class:list={'hidden'} id="copy-check" />
     </button>
