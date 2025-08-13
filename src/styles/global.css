@@ -67,4 +67,10 @@ Gradients
   .btn-bento {
     @apply text-white bg-Neutral-800/80 font-semibold dark:text-Yellow-200/90 dark:bg-Yellow-800/40 dark:border dark:border-Yellow-800 rounded-lg py-1 px-3 shadow-3xl dark:shadow-none hidden md:block;
   }
+  .h2 {
+    @apply text-3xl pb-8 md:text-4xl text-center;
+  }
+  .parrafo {
+    @apply mb-[1.2rem] text-sm leading-[1.4rem] max-w-prose md:text-base md:leading-[1.6rem];
+  }
 }
