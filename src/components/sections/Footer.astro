@@ -1,0 +1,36 @@
+---
+import Section from '@/components/Section.astro';
+import SocialPill from '@/components/SocialPill.astro';
+import GitHub from '@/assets/icons/github.astro';
+import Linkedin from '@/assets/icons/linkedin.astro';
+import Cv from '@/assets/icons/cv.astro';
+---
+
+<Section>
+  <footer
+    class="border-t border-Neutral-200 dark:border-Neutral-700/50 flex justify-center gap-5 pt-6"
+  >
+    <SocialPill
+      href="https://github.com/seandsun"
+      title="Visitar el perfil de Marisol en GitHub"
+    >
+      <GitHub
+        class:list={'size-10 p-2 rounded-full bg-white text-purple-500 shadow-xl border-2 border-white dark:shadow-none dark:border-purple-400 dark:text-purple-400 dark:bg-purple-600/20 md:size-16 md:p-3  hover:border-purple-500 hover:dark:bg-purple-600/10 hover:dark:border-purple-300 hover:dark:text-purple-300 transition-all duration-300 ease-in-out'}
+      /></SocialPill
+    >
+    <SocialPill
+      href="https://www.linkedin.com/in/marisol-henao-grajales"
+      title="Visitar el perfil de Marisol en LinkedIn"
+      ><Linkedin
+        class:list={'size-10 p-2 rounded-full bg-white text-blue-500 shadow-xl border-2 border-white dark:shadow-none dark:border-blue-400 dark:text-blue-400 dark:bg-blue-600/20 md:size-16 md:p-3 hover:border-blue-500 hover:dark:bg-blue-600/10 hover:dark:border-blue-300 hover:dark:text-blue-300 transition-all duration-300 ease-in-out'}
+      />
+    </SocialPill>
+    <SocialPill
+      href="/portfolio-marisol-henao/cv.pdf"
+      title="Visitar el currículum vitae de Marisol en formato pdf"
+      ><Cv
+        class:list={'size-10 p-2 rounded-full bg-white text-green-500 shadow-xl border-2 border-white dark:shadow-none dark:border-green-400 dark:text-green-400 dark:bg-green-600/20  md:size-16 md:p-3 hover:border-green-500 hover:dark:bg-green-600/10 hover:dark:border-green-300 hover:dark:text-green-300 transition-all duration-300 ease-in-out'}
+      />
+    </SocialPill>
+  </footer>
+</Section>
