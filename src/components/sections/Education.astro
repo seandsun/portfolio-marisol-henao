@@ -1,0 +1,60 @@
+---
+import Section from '@/components/Section.astro';
+import Check from '@/assets/icons/check.astro';
+import Progress from '@/assets/icons/progress.astro';
+import EducationItem from '@/components/EducationItem.astro';
+---
+
+<Section>
+  <h2 class="h2" id="educacion">Educación</h2>
+  <div
+    class="relative after:absolute after:w-0.5 after:h-full after:bg-Neutral-700 after:top-0 after:left-[19px] md:after:left-1/2 after:-z-10 after:-ml-[3px] after:animate-moveline"
+  >
+    <!-- one -->
+    <EducationItem
+      school="Fundación Universitaria Católica del Norte"
+      area="Grado en Ingeniería Informática"
+      time="2022 - Actual"
+      stylesContainer="pl-16 md:pl-0 md:pr-12"
+      stylesArrow="md:border-r-0 md:border-l-Neutral-50 md:dark:border-l-Neutral-800/90 md:left-auto md:border-l-[15px] md:-right-[15px]"
+    >
+      <Progress
+        class:list={'absolute size-8 p-1 rounded-full left-0 top-8 z-10 text-Yellow-500 bg-Neutral-800 md:size-9 md:left-auto md:-right-4'}
+      />
+    </EducationItem>
+    <!-- two -->
+    <EducationItem
+      school="Google"
+      area="Curso de Ciberseguridad de Google"
+      time="2024"
+      stylesContainer="pl-16 md:pl-12 md:left-1/2"
+    >
+      <Check
+        class:list={'absolute size-8 p-1 rounded-full -right-5 top-8 z-10 left-0 text-Yellow-500 bg-Neutral-800 md:size-9 md:-left-5'}
+      />
+    </EducationItem>
+    <!-- three -->
+    <EducationItem
+      school="Fundación Universitaria Católica del Norte"
+      area="Diplomado en Seguridad Informática"
+      time="2022"
+      stylesContainer="pl-16 md:pl-0 md:pr-12"
+      stylesArrow="md:border-r-0 md:border-l-Neutral-50 md:dark:border-l-Neutral-800/90 md:left-auto md:border-l-[15px] md:-right-[15px]"
+    >
+      <Check
+        class:list={'absolute size-8 p-1 rounded-full left-0 top-8 z-10 text-Yellow-500 bg-Neutral-800 md:size-9 md:-right-4 md:left-auto'}
+      />
+    </EducationItem>
+    <!-- four -->
+    <EducationItem
+      school="Fundación Universitaria Católica del Norte"
+      area="Tecnología en Desarrollo de Software"
+      time="2019 - 2022"
+      stylesContainer="pl-16 md:pl-12 md:left-1/2"
+    >
+      <Check
+        class:list={'absolute size-8 p-1 rounded-full -right-5 top-8 z-10 left-0 text-Yellow-500 bg-Neutral-800 md:size-9 md:-left-5'}
+      />
+    </EducationItem>
+  </div>
+</Section>
