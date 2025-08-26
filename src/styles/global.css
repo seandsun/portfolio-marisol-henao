@@ -2,3 +2,17 @@
 
 /* Dark mode */
 @custom-variant dark (&:where(.dark, .dark *));
+
+/* Fonts */
+@font-face {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400 700;
+  src: url('/fonts/dm-sans/DMSans-VariableFont_opsz-wght.ttf')
+    format('truetype');
+  font-display: swap;
+}
+
+@theme {
+  --font-DM-Sans: 'DM Sans', 'sans-serif';
+}
