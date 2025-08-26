@@ -13,19 +13,24 @@ const icons = {
 
 type IconName = keyof typeof icons;
 
+/*
+"[key: string]: any;" Permite atributos (attrs) adicionales,
+el nombre del atributo debe ser un string y su valor de cualquier tipo (any)
+*/
 interface Props {
   name: IconName;
   class?: string;
+  [key: string]: any;
 }
 
-const { name, class: className } = Astro.props as Props;
+const { name, class: className, ...attrs } = Astro.props as Props;
 
 const IconComponent = icons[name];
 ---
 
 {
   IconComponent ? (
-    <IconComponent class={className} />
+    <IconComponent class={className} {...attrs} />
   ) : (
     <span class="text-red-500 font-mono text-xs">
       [icon "{name}" not found]
