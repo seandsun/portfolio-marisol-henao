@@ -17,6 +17,19 @@ const { title, description } = Astro.props as Props;
     <title>{title}</title>
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!-- Aplica dark mode antes de que cargue la UI -->
+    <script>
+      (function () {
+        const userPref = localStorage.getItem('darkMode');
+        const isDark = userPref === 'true';
+
+        if (isDark) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
   </head>
   <body>
     <slot />
