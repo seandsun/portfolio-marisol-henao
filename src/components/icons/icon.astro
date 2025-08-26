@@ -1,0 +1,34 @@
+---
+import Cpu from '@/components/icons/cpu.astro';
+import CpuOff from '@/components/icons/cpu-off.astro';
+import Sun from '@/components/icons/sun.astro';
+import Moon from '@/components/icons/moon.astro';
+
+const icons = {
+  cpu: Cpu,
+  cpuOff: CpuOff,
+  sun: Sun,
+  moon: Moon,
+};
+
+type IconName = keyof typeof icons;
+
+interface Props {
+  name: IconName;
+  class?: string;
+}
+
+const { name, class: className } = Astro.props as Props;
+
+const IconComponent = icons[name];
+---
+
+{
+  IconComponent ? (
+    <IconComponent class={className} />
+  ) : (
+    <span class="text-red-500 font-mono text-xs">
+      [icon "{name}" not found]
+    </span>
+  )
+}
