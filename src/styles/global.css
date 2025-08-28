@@ -14,5 +14,26 @@
 }
 
 @theme {
+  /* Fonts */
   --font-DM-Sans: 'DM Sans', 'sans-serif';
+
+  /* Colors */
+  --color-custom-gray-100: #e5e8ef; /* Bg light */
+  --color-custom-gray-200: #d6dae5;
+  --color-custom-gray-300: #b6bdd2;
+  --color-custom-gray-400: #97a1be;
+  --color-custom-gray-500: #7784ab;
+  --color-custom-gray-600: #5c6a93;
+  --color-custom-gray-700: #485374;
+  --color-custom-gray-800: #353d54;
+  --color-custom-gray-900: #212635;
+  --color-custom-gray-950: #0d0f16; /* Bg dark */
+
+  --color-light: var(--color-custom-gray-100);
+  --color-dark: var(--color-custom-gray-950);
+
+  --color-green-light-100: #dbfce7;
+  --color-green-light-200: #05df72;
+  --color-green-dark-100: #016630;
+  --color-green-dark-200: #032e15;
 }
