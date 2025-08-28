@@ -1,0 +1,71 @@
+---
+import DarkMode from '@/components/layout/DarkMode.astro';
+import Navbar from '@/components/layout/Navbar.astro';
+import Icon from '@/components/icons/icon.astro';
+---
+
+<header
+  class="fixed top-5 left-3/6 -translate-x-2/4 right-0 w-full z-40 bg-white/40 backdrop-blur-xs dark:bg-custom-gray-900/50 md:max-w-[900px] min-[899px]:rounded-lg shadow-2xl dark:shadow-none py-2 px-4 md:py-2 md:px-8"
+>
+  <nav class="flex justify-between items-center">
+    <!-- Logo -->
+    <a
+      class="flex justify-center items-center size-10 rounded-full"
+      href="#home"
+      aria-label="Logo del portfolio"
+    >
+      <img class="w-full" src="/favicon.svg" alt="Logo del portfolio" />
+    </a>
+    <Navbar isHorizontal={true} />
+    <!-- Abrir menú -->
+    <div
+      class="text-white dark:text-custom-gray-900 bg-green-dark-200 dark:bg-green-light-100 size-10 rounded-full flex items-center justify-center order-3 md:order-none md:hidden"
+      id="open-btn"
+    >
+      <Icon name="cpu" class="cursor-pointer" />
+    </div>
+    <!-- Botón dark mode -->
+    <div class="flex justify-center items-center order-2 md:order-none">
+      <DarkMode />
+    </div>
+  </nav>
+</header>
+
+<!-- Menú modal -->
+<div
+  class="bg-custom-gray-900/50 z-50 fixed inset-0 hidden cursor-pointer md:static md:inset-auto md:block"
+  id="menu-modal"
+>
+  <div
+    class="bg-custom-gray-100 dark:bg-custom-gray-950 absolute right-0 top-0 h-screen flex flex-col items-end px-5 py-7 md:static md:inset-auto md:h-auto md:p-0"
+  >
+    <!-- Cerrar menú -->
+    <div
+      class="text-white dark:text-custom-gray-900 bg-green-dark-200 dark:bg-green-light-100 size-10 rounded-full flex items-center justify-center md:hidden"
+      id="close-btn"
+    >
+      <Icon name="cpuOff" class="cursor-pointer" />
+    </div>
+    <Navbar />
+  </div>
+</div>
+
+<script>
+  const $menuModal = document.getElementById('menu-modal');
+  const $closeBtn = document.getElementById('close-btn');
+  const $openBtn = document.getElementById('open-btn');
+
+  if ($openBtn && $closeBtn && $menuModal) {
+    $openBtn.addEventListener('click', () => {
+      $menuModal.classList.remove('hidden');
+    });
+
+    $closeBtn.addEventListener('click', () => {
+      $menuModal.classList.add('hidden');
+    });
+
+    $menuModal.addEventListener('click', () => {
+      $menuModal.classList.add('hidden');
+    });
+  }
+</script>
